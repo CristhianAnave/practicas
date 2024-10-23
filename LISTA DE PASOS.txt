@@ -1,0 +1,49 @@
+LISTA PASOS PARA LA APLICACION ESCRITORIO
+
+1.Visual studio crear nuevo proyecto
+tipo---> biblioteca ---> biblioteca de clases(.net.framerWork) para dll.
+ crear Cad-nombre, ---> Capa Acceso a Datos y solucion con mismo nombre
+
+2.en nombre de la solucion --> agregar--> nuevo proyecto--> tipo biblioteca
+ --> biblioteca de clases(.NET.FRAMERWORK) para dll.
+crear Cln-nombre,--->Capa Logica de Negocios.
+
+3. en nombre de la solucion --> agregar--> nuevo proyecto--> tipo escritorio
+ --> aplicacion de windows Forms(.NET FRAMEWORD).
+crear Cp-nombre,--->Capa Logica de Presentacion.
+4. Configuraciones Cad
+ click derecho en Cad-nombre -->agregar--->nuevo elemento
+---> datos---> ADO .NET Entity Data Models-->nombre archivo--> Modelo--agregar
+-  4.0 copiar el nombre del motor de basedatos (localdb)\MSSQLLocalDB
+-  4.1.  primera opcion Entity frameword desde base de datos-> siguiente
+-  4.2.  nueva coneccion --> ponen el nombre (localdb)\MSSQLLocalDB.
+-  4.3. Autenticacion: autenticacion por sql server--> nombre usuario: ejem:
+  usrlicoreria--> contraseña--> 123456--> seleccionar nombre basedatos
+  y te tiene que aparecer la basedatos--> probar coneccion. aceptar.
+-  4.4 . Tiquear (si incluir datos confidenciales....) --> siguietne-->siguiente
+-  4.5 .tiqueo tablas y procedimientos almacenados (pa). finalizar.
+-  4.6 . debe aparecer el modelo de clases de la basede datos.
+
+5.Configurar Cln
+ - 5.1. en Cln-nombre--> click derecho-->referencias-->administrador paquetes Nutget
+ - 5.2. Instalar .NET Entity framework
+ - 5.3. Click derecho-->referencias--> agregar referencias-->agregar Cad-nombre.
+ - 5.4. Click derecho-->referencias--> agregar referencias-->Ensamblados
+ ---> tiquear Sistem.data.entity,Desing, Linq.-->aceptar.
+
+6.Configurar Cp:
+ - 6.1.en Cp-nombre--> click derecho-->referencias-->administrador paquetes Nutget
+ - 6.2. Instalar .NET Entity framework.
+ - 6.3. Click derecho-->referencias--> agregar referencias-->agregar Cad-nombre.
+  y Cln-nombre.
+
+7.En Cln: aqui se crean los CRUD
+ -7.1 crar nueva clase Ejemplo producroCln, proveedorCln, etcCln.
+8. para conectar con la base de datos:
+ ir a App.config de Cad-nombre
+    copiar tres lineas de codigo <conecction string>....
+    pegar en App.config de Cp-nombre debajo de </configSections>
+
+
+
+
